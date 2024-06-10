@@ -1,11 +1,20 @@
 import MenuIcon from "@mui/icons-material/Menu";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SideNavContent from "./SideNavContent";
 import CloseIcon from "@mui/icons-material/Close";
+import { motion } from "framer-motion";
 
 const HeaderBottom = () => {
+  const ref = useRef();
   const [sidebar, setSidebar] = useState(false);
+  useEffect(() => {
+    document.body.addEventListener("click", (e) => {
+      if (e.target.contains(ref.current)) {
+        setSidebar(false);
+      }
+    });
+  }, [ref, sidebar]);
   return (
     <div className="bg-amazon_light text-white w-full px-4 h-[36px] flex items-center">
       {/* Listitems Starts here */}
@@ -27,7 +36,13 @@ const HeaderBottom = () => {
       {sidebar && (
         <div className="w-full h-screen text-black fixed top-0 left-0 bg-amazon_blue bg-opacity-50">
           <div className="w-full h-full relative ">
-            <div className="w-[350px] h-full bg-white border border-black overflow-y-scroll">
+            <motion.div
+              ref={ref}
+              initial={{ x: -500, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.5 }}
+              className="scroll relative h-full w-[80%] overflow-x-hidden overflow-y-scroll border border-black bg-white md:w-[350px]"
+            >
               <div className="w-full py-2 px-6 bg-amazon_light text-white flex items-center gap-4">
                 <AccountCircleIcon />
                 <h3 className="font-titleFont font-bold text-lg tracking-wide">
@@ -64,13 +79,13 @@ const HeaderBottom = () => {
                 two="Customer Service"
                 three="Sign in"
               />
-            </div>
+            </motion.div>
             <span
-              onClick={() => setSidebar(false)}
-              className="absolute top-1 left-[360px] cursor-pointer w-10 h-10 text-white flex items-center justify-center "
-            >
-              <CloseIcon />
-            </span>
+                onClick={() => setSidebar(false)}
+                className="absolute top-0 left-[360px] cursor-pointer w-10 h-10 text-white flex items-center justify-center "
+              >
+                <CloseIcon fontSize="large" />
+              </span>
           </div>
         </div>
       )}
