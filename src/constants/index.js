@@ -41,3 +41,82 @@ export const allItems = [
   { _id: 139, title: "Video Games" },
   { _id: 140, title: "Watches" },
 ];
+
+export const middleList = [
+  {
+    _id: 2221,
+    title: "Get to Know Us",
+    listItems: [
+      {
+        _id: "001",
+        listData: [
+          "Careers",
+          "Blog",
+          "About Amazon",
+          "Investor Relations",
+          "Amazon Devices",
+          "Amazon Tours",
+          "Press & Media",
+        ],
+      },
+    ],
+  },
+  {
+    _id: 2222,
+    title: "Make Money with Us",
+    listItems: [
+      {
+        _id: "002",
+        listData: [
+          "Sell products on Amazon",
+          "Sell apps on Amazon",
+          "Become an Affiliate",
+          "Advertise Your Products",
+          "Self-Publish with Us",
+          "Host an Amazon Hub",
+        ],
+      },
+    ],
+  },
+  {
+    _id: 2223,
+    title: "Amazon Payment Products",
+    listItems: [
+      {
+        _id: "003",
+        listData: [
+          "Amazon Rewards Visa Signature Cards",
+          "Amazon Store Card",
+          "Amazon Secured Card",
+          "Amazon Business Card",
+          "Amazon Business Line of Credit",
+          "Shop with Points",
+          "Credit Card Marketplace",
+          "Reload Your Balance",
+          "Amazon Currency Converter",
+        ],
+      },
+    ],
+  },
+  {
+    _id: 2224,
+    title: "Let Us Help You",
+    listItems: [
+      {
+        _id: "004",
+        listData: [
+          "Amazon and COVID-19",
+          "Your Account",
+          "Your Orders",
+          "Shipping Rates & Policies",
+          "Amazon Prime",
+          "Returns & Replacements",
+          "Manage Your Content and Devices",
+          "Amazon Assistant",
+          "Help",
+        ],
+      },
+    ],
+  },
+];
+

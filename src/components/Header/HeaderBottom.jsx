@@ -34,7 +34,7 @@ const HeaderBottom = () => {
       {/* Listitems Ends here */}
       {/* SideNav Starts here */}
       {sidebar && (
-        <div className="w-full h-screen text-black fixed top-0 left-0 bg-amazon_blue bg-opacity-50">
+        <div className="w-full h-screen text-black fixed top-0 left-0 bg-amazon_blue bg-opacity-50 z-50">
           <div className="w-full h-full relative ">
             <motion.div
               ref={ref}
