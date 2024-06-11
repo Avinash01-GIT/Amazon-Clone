@@ -13,4 +13,7 @@
   .headerHover {
     @apply px-2 h-[80%] flex items-center border border-transparent hover:border-white cursor-pointer duration-100
   }
+  .footerLink {
+    @apply cursor-pointer font-titleFont text-sm tracking-wide duration-150 hover:text-gray-100 hover:underline;
+  }
 }

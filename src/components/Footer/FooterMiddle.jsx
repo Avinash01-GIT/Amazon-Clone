@@ -25,14 +25,14 @@ const FooterMiddle = () => {
         <div>
           <img className="w-20 pt-3" src={logo} alt="logo" />
         </div>
+        <div className="flex cursor-pointer items-center justify-center gap-1 border border-gray-500 px-2 py-1 duration-200 hover:border-amazon_yellow">
+          <img src={indiaFlag} className="w-6" alt="flagimg" />
+          <p>India</p>
+        </div>
         <div className="flex gap-2">
           <p className="flex cursor-pointer items-center justify-center gap-1 border border-gray-500 px-2 py-1 duration-200 hover:border-amazon_yellow">
             English
           </p>
-        </div>
-        <div className="flex cursor-pointer items-center justify-center gap-1 border border-gray-500 px-2 py-1 duration-200 hover:border-amazon_yellow">
-          <img src={indiaFlag} className="w-6" alt="flagimg" />
-          <p>India</p>
         </div>
       </div>
     </div>

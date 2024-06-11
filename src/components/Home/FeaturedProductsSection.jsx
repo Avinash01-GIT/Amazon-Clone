@@ -65,7 +65,7 @@ const FeaturedProductsSection = () => {
 
         <div className="flex h-[50%] absolute left-0 right-0 top-0 text-white justify-between ">
           <button
-            className="md:px-2 flex items-center rounded-[5px] focus:shadow-inlineButtonShadow justify-center cursor-pointer"
+            className="md:px-2 flex items-center rounded-[5px] justify-center cursor-pointer"
             onClick={handlePrevProductClick}
           >
             <NavigateBeforeIcon
@@ -75,12 +75,12 @@ const FeaturedProductsSection = () => {
             />
           </button>
           <button
-            className="md:px-2 flex items-center justify-center rounded-[5px] focus:shadow-inlineButtonShadow cursor-pointer"
+            className="md:px-2 flex items-center justify-center rounded-[5px] cursor-pointer"
             onClick={handleNextProductClick}
           >
             <NavigateNextIcon
               style={{
-                fontSize: "3rem",
+                fontSize: "2rem",
               }}
             />
           </button>

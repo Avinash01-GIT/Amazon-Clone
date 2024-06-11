@@ -10,11 +10,11 @@ const Header = () => {
   const [showAll, setShowAll] = useState(false);
 
   return (
-    <div className="w-full">
+    <div className="w-full sticky top-0 z-50">
     <div className="w-full bg-amazon_blue text-white px-4 py-3 flex items-center gap-4">
       {/* Image Starts here */}
       <div className="headerHover">
-        <img src={logo} alt="" className="w-24 mt-2" />
+        <img src={logo} alt="" className="w-20 mt-2" />
       </div>
       {/* Image Ends here */}
       {/* Deliver Starts here  */}
