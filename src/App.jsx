@@ -10,7 +10,10 @@ import {
   Outlet,
   Route,
   RouterProvider,
+  ScrollRestoration,
 } from "react-router-dom";
+
+import Cart from "./pages/Cart";
 
 
 
@@ -18,6 +21,7 @@ const LayOut = () => {
   return (
     <div>
       <Header />
+      <ScrollRestoration/>
       <Outlet />
       <Footer />
     </div>
@@ -28,6 +32,7 @@ const App = () => {
     createRoutesFromElements(
         <Route path="/" element={<LayOut />}>
           <Route index element={<Home/>} loader={productData}></Route>
+          <Route path="/cart" element={<Cart/>}></Route>
         </Route>
     )
   );
