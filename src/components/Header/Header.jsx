@@ -67,6 +67,7 @@ const Header = () => {
         </div>
         {/* Search Ends here */}
         {/* Siginin Starts here */}
+        <Link to="/signin">
         <div className="flex flex-col items-start justify-center headerHover">
           <p className="text-xs text-lightText font-light">Hello, sign in</p>
           <p className="text-sm font-semibold -mt-1 text-whiteText">
@@ -76,6 +77,7 @@ const Header = () => {
             </span>
           </p>
         </div>
+        </Link>
         {/* Siginin Ends here */}
         {/* Orders Starts here */}
         <div className="flex flex-col items-start justify-center headerHover">

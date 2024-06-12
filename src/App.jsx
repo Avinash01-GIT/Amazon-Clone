@@ -14,14 +14,14 @@ import {
 } from "react-router-dom";
 
 import Cart from "./pages/Cart";
-
-
+import Signin from "./pages/Signin";
+import Registration from "./pages/Registration";
 
 const LayOut = () => {
   return (
     <div>
       <Header />
-      <ScrollRestoration/>
+      <ScrollRestoration />
       <Outlet />
       <Footer />
     </div>
@@ -30,10 +30,14 @@ const LayOut = () => {
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
+      <Route>
         <Route path="/" element={<LayOut />}>
-          <Route index element={<Home/>} loader={productData}></Route>
-          <Route path="/cart" element={<Cart/>}></Route>
+          <Route index element={<Home />} loader={productData}></Route>
+          <Route path="/cart" element={<Cart />}></Route>
         </Route>
+        <Route path="/signin" element={<Signin/>}></Route>
+        <Route path="/registration" element={<Registration/>}></Route> 
+      </Route>
     )
   );
   return (
