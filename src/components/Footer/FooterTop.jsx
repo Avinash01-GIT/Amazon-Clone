@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const FooterTop = () => {
   return (
     <section name="footer-top" className="bg-white pt-5">
@@ -6,9 +8,11 @@ const FooterTop = () => {
           <p className="text-[13px] leading-6 font-medium">
             See Personalized recommendations
           </p>
+          <Link to="/signin">
           <button className="w-full bg-yellow-400 rounded-md py-[6px] text-xs font-semibold cursor-pointer hover:bg-yellow-500 active active::bg-yellow-700">
             Sign In
           </button>
+          </Link>
           <p className="text-[11px] mt-1">
             New customer?
             <span className="text-[#007185] cursor-pointer">Start here.</span>
