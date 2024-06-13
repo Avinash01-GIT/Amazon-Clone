@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import {
   deleteItem,
   resetCart,
-  incrementQuantity,
-  decrementQuantity,
+  increamentQuantity,
+  decreamentQuantity,
 } from "../redux/amazonSlice";
 import { emptyCart } from "../assets/images";
 import { motion } from "framer-motion";
@@ -60,14 +60,14 @@ const Cart = () => {
                       <div className="flex justify-center items-center gap-2 w-24 py-1 text-center bg-[#F0F2F2] drop-shadow-lg rounded-md">
                         <p>Qty:</p>
                         <p
-                          onClick={() => dispatch(decrementQuantity(item.id))}
+                          onClick={() => dispatch(decreamentQuantity(item.id))}
                           className="bg-gray-200 px-1 cursor-pointer rounded-md hover:bg-gray-400 duration-300"
                         >
                           -
                         </p>
                         <p>{item.quantity}</p>
                         <p
-                          onClick={() => dispatch(incrementQuantity(item.id))}
+                          onClick={() => dispatch(increamentQuantity(item.id))}
                           className="bg-gray-200 px-1 cursor-pointer rounded-md hover:bg-gray-400 duration-300"
                         >
                           +
