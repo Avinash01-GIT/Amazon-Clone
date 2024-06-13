@@ -4,8 +4,9 @@ import AccountCircleIcon from "@mui/icons-material/AccountCircle";
 import SideNavContent from "./SideNavContent";
 import CloseIcon from "@mui/icons-material/Close";
 import { motion } from "framer-motion";
-
+import { useSelector } from "react-redux";
 const HeaderBottom = () => {
+  const userInfo = useSelector((state) => state.amazon.userInfo);
   const ref = useRef();
   const [sidebar, setSidebar] = useState(false);
   useEffect(() => {
@@ -43,10 +44,26 @@ const HeaderBottom = () => {
               transition={{ duration: 0.5 }}
               className="scroll relative h-full w-[80%] overflow-x-hidden overflow-y-scroll border border-black bg-white md:w-[350px]"
             >
-              <div className="w-full py-2 px-6 bg-amazon_light text-white flex items-center gap-4">
-                <AccountCircleIcon />
+              <div className="w-full bg-amazon_light text-white py-2 px-6 flex items-center gap-4">
+                {userInfo ? (
+                  <img
+                    className="w-10 h-10 rounded-full"
+                    src={userInfo.image}
+                    alt="UserImg"
+                  />
+                ) : (
+                  <AccountCircleIcon />
+                )}
                 <h3 className="font-titleFont font-bold text-lg tracking-wide">
-                  Hello, Sign in
+                  {userInfo ? (
+                    <p className="text-sm mdl:text-xs text-gray-100 mdl:text-lightText font-medium">
+                      Hello, {userInfo.userName}
+                    </p>
+                  ) : (
+                    <p className="text-sm mdl:text-xs text-white mdl:text-lightText font-light">
+                      Hello, sign in
+                    </p>
+                  )}
                 </h3>
               </div>
               <SideNavContent
@@ -81,11 +98,11 @@ const HeaderBottom = () => {
               />
             </motion.div>
             <span
-                onClick={() => setSidebar(false)}
-                className="absolute top-0 left-[360px] cursor-pointer w-10 h-10 text-white flex items-center justify-center "
-              >
-                <CloseIcon fontSize="large" />
-              </span>
+              onClick={() => setSidebar(false)}
+              className="absolute top-0 left-[360px] cursor-pointer w-10 h-10 text-white flex items-center justify-center "
+            >
+              <CloseIcon fontSize="large" />
+            </span>
           </div>
         </div>
       )}
